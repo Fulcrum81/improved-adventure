@@ -1,19 +1,34 @@
-import java.util.Scanner;
+package goods.electronics;
 
-public class Laptop {
+import goods.Good;
 
-    public String name;
-    public int ram;
-    public int ssd;
-    public String processor;
-    public String resolution;
+public class Laptop extends Good {
 
-    public Laptop(String name, int ram, int ssd, String processor, String resolution) {
+    private String name;
+    private int ram;
+    private int ssd;
+    private String processor;
+    private String resolution;
+
+    public Laptop(String name, int ram, int ssd, String processor, String resolution, double price) {
         this.name = name;
         this.ram = ram;
         this.ssd = ssd;
         this.processor = processor;
         this.resolution = resolution;
+        this.price = price;
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public void setRam(int newRam) {
+        if (newRam % 2 == 0) {
+            ram = newRam;
+        } else {
+            System.out.println("Couldn't set ram because the value is incorrect");
+        }
     }
 
     public void printLaptopInfo() {
@@ -35,6 +50,7 @@ public class Laptop {
     }
 
     public boolean areSpecsSufficient(String processor) {
+        printIAmALaptop();
         return processor.length() > 10;
     }
 
@@ -44,6 +60,15 @@ public class Laptop {
 
         return processor.equals(anotherLaptop.processor) && ram == anotherLaptop.ram && resolution
                 .equals(anotherLaptop.resolution) && ssd == anotherLaptop.ssd;
+    }
+
+    public static void printIAmALaptop() {
+        System.out.println("I am a laptop");
+    }
+
+    @Override
+    public double getPrice() {
+        return price * 1.5;
     }
 
 }
