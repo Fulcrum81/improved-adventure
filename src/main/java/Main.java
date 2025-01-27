@@ -119,6 +119,10 @@ public class Main {
         }
     }
 
+    public static int divideTwoNumbers(int a, int b) {
+        return a / b;
+    }
+
     public static void collections() {
         ArrayList<String> books = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);

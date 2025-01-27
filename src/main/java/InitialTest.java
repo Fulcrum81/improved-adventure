@@ -1,4 +1,4 @@
-public class Test {
+public class InitialTest {
 
     private static final String ERROR_MESSAGE = "Sorry, wrong username or password";
 
